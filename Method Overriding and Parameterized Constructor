@@ -1,0 +1,50 @@
+/* Create a class called parent which contains a parameterized constructor having two parameters. Create a class child which contains the constructor with three 
+parameters where two parameters will be of type parent. Create a method show() in parent class which displays the value of these two parameters. Override the method 
+show() in child class which will display three, the two variables present in parent class as well as parameters in child class. */
+
+
+import java.util.*;
+class Parent
+{
+   String f,m;
+   Parent (String f1, String m1)     
+   {
+        f=f1;
+        m=m1;
+   }
+   void show()
+   {
+         System.out.println("Name of father- "+f);
+         System.out.println("Name of mother- "+m);
+    }
+}
+class Child extends Parent
+{
+    String c;
+    Child  (String f1, String m1, String c1)
+    {
+         super(f1, m1);
+         c=c1;
+    }
+    void show()
+    {
+         System.out.println("Name of father- "+f);
+         System.out.println("Name of mother- "+m);
+         System.out.println("Name of child- "+c);
+    }
+}
+class Parent_Child
+{
+    public static void main (String[] args)
+    {
+          Scanner sc=new Scanner(System.in);
+          System.out.println("Enter name of father: ");
+          String f2=sc.nextLine();
+          System.out.println("Enter name of mother: ");
+          String m2=sc.nextLine();
+          System.out.println("Enter name of child: ");
+          String c2=sc.nextLine();
+          Child child1=new Child(f2, m2, c2);
+          child1.show();
+     }
+}
