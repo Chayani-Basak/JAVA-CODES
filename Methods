@@ -1,0 +1,40 @@
+/* Create a class called student with field id, name, department, year. Create a method inside a class called insertinfo() and displayinfo() for inserting and displaying
+the information. Create the object and invoke the method through main. */
+
+
+import java.util.Scanner;
+class students{
+	int id;
+	String name;
+	String department;
+	String year;
+	void insertinfo(){
+      Scanner reader=new Scanner(System.in);
+      System.out.print("Enter student-id:");
+      int i=reader.nextInt();
+      reader.nextLine();
+      System.out.print("Enter the name of student:");
+      String n=reader.nextLine();
+      System.out.print("Enter the department:");
+      String d=reader.nextLine();
+      System.out.print("Enter the year of study:");
+      String y=reader.nextLine();
+      id=i;
+      name=n;
+      department=d;
+      year=y;
+	}
+	void displayinfo(){
+	    System.out.println("Student id:"+id);
+		  System.out.println("Student's name-"+name);
+		  System.out.println("Department-"+department);
+		  System.out.println("Year:"+year);
+	}
+}
+class demoStudent{
+	public static void main(String[] args){
+	    students s=new students();
+	    s.insertinfo();
+	    s.displayinfo();
+	}
+}
