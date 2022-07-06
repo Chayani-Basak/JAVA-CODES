@@ -1,0 +1,21 @@
+// Show the utility of static keywords by taking the example of counter.
+
+
+class Counter {
+  static int count=0;
+	Counter() {
+	    count++;
+      System.out.println(count);
+  }
+	public static void main (String[] args) 
+	{
+       System.out.println("Counter values after incrementing:- ");
+       Counter c1=new Counter();
+       Counter c2=new Counter();
+       Counter c3=new Counter();
+       Counter c4=new Counter();                             
+   }
+}
+
+/* When variable ‘counter’ is not taken as static, the updated value of counter is not being preserved and every time it is being updated from 0, the initial value, to 1 
+when Counter is being called. But when the variable is being declared as static, the value of counter is incremented considering the updated values each time. */
