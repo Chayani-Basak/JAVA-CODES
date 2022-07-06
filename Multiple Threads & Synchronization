@@ -1,0 +1,44 @@
+class javaThread
+{
+	synchronized void createThread(String message) {
+		System.out.print("[" + message);
+		try {
+			Thread.sleep(1000);
+		}
+		catch (InterruptedException e) {
+			System.out.println("Interruption");
+		}
+		System.out.println("]");
+	}
+}
+class callThread implements Runnable {
+	String message;
+	javaThread target;
+	Thread t;
+	public callThread(javaThread target1, String message1) {
+		target=target1;
+		message=message1;
+		t=new Thread(this);
+		t.start();
+	}
+	public void run() {
+		target.createThread(message);
+	}
+}
+class Thread_Synchronization {
+	public static void main (String args[])
+	{
+		javaThread target=new javaThread();
+		callThread t1=new callThread(target, "Java");
+		callThread t2=new callThread(target, "Multi-threading");
+		callThread t3=new callThread(target, "Synchronization");
+		try {
+			t1.t.join();
+			t2.t.join();
+			t3.t.join();
+		}
+		catch (InterruptedException e) {
+			System.out.println("Interruption");
+		}
+	}
+}
