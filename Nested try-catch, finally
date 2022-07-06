@@ -1,0 +1,28 @@
+class Try_Catch_Finally {
+	public static void main (String[] args)
+	{
+		try {
+			int a=args.length;
+			int b=42/a;
+			System.out.println("Length of arguments= "+a);
+			try {
+				if (a==1)
+					a=a/(a-a);
+				if (a==2)
+				{
+					int c[]=new int[30];
+					c[42]=100;
+				}
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println("Cannot access index that is not within the range of the array:- "+e);
+			}
+		}
+		catch(ArithmeticException e) {
+			System.out.println("Division by 0 is not feasible:- "+e);
+		}
+		finally {
+			System.out.println("After executing the nested try-catch blocks.");
+		}
+	}
+}
