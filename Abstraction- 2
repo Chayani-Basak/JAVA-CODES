@@ -1,0 +1,72 @@
+/*	Create a class called bank, create a method called display(), which will display the content like bank name, branch name, IFSC code. Create an abstract method 
+getroi(). Extend the class for different banks SBI, PNB and HDFC. Set the rate of interest as 6%, 7%, 9% respectively. A person wants to make a fixed deposit of 50000. 
+Display which bank should be chosen for his FD. */
+
+
+import java.util.*;
+abstract class Bank
+{
+    String name, branch, ifsc;
+    void display(String name, String branch, String ifsc)
+    { 
+         System.out.println();
+         System.out.println("Bank information:-");
+         System.out.println("BANK NAME- "+name);
+         System.out.println("BRANCH- "+branch);
+         System.out.println("IFSC CODE- "+ifsc);  
+    }
+    abstract int getROI();
+}
+class SBI extends Bank
+{
+    int getROI()
+    {
+         return 6;
+    }
+}
+class PNB extends Bank
+{
+    int getROI()
+    {
+         return 7;
+    }
+}
+class HDFC extends Bank
+{
+    int getROI()
+    {
+         return 9;
+    }
+}
+class Abstract_Bank
+{
+    public static void main (String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Enter the bank details:-");
+         System.out.print("Name of bank- ");
+         String n=sc.nextLine();
+         System.out.print("Branch name- ");
+         String b=sc.nextLine();
+         System.out.print("IFSC Code- ");
+         String i=sc.nextLine();
+         Bank bank1=new SBI();
+         bank1.display(n, b, i);
+         Bank bank2=new PNB();
+         Bank bank3=new HDFC();
+         double a1=50000+((50000*bank1.getROI())/100);
+         double a2=50000+((50000*bank2.getROI())/100);
+         double a3=50000+((50000*bank3.getROI())/100);
+         System.out.println();
+         System.out.println("Amount acquired after 1 year on a fixed deposit of Rs. 50000:-");
+         System.out.println("SBI- Rs."+a1);
+         System.out.println("PNB- Rs."+a2);
+         System.out.println("HDFC- Rs."+a3);
+         if ((a1>a2) && (a1>a3))
+         System.out.println("Amount of Rs."+a1+" is the highest, which is provided by SBI. Hence, it should be chosen for fixed deposit.");
+         else if ((a2>a1) && (a2>a3))
+         System.out.println("Amount of Rs."+a2+" is the highest, which is provided by PNB. Hence, it should be chosen for fixed deposit.");
+         else
+         System.out.println("Amount of Rs."+a3+" is the highest, which is provided by HDFC. Hence, it should be chosen for the fixed deposit.");
+    }
+}
