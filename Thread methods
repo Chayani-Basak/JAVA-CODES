@@ -1,0 +1,32 @@
+class javaThread implements Runnable {
+	public void run() {
+		System.out.println("Name of current thread: "+Thread.currentThread().getName());
+		try {
+			Thread.sleep(100);
+		}
+		catch (InterruptedException e)  {
+			System.out.println("Interruption");
+		}
+	}
+
+}
+class Thread_Methods {
+	public static void main (String args[])
+	{
+		javaThread t1=new javaThread();
+		Thread thread1=new Thread(t1);
+		thread1.setName("1st Thread");
+		javaThread t2=new javaThread();
+		Thread thread2=new Thread(t1);
+		thread2.setName("2nd Thread");
+		System.out.println("Names of threads created: "+thread1.getName()+", "+thread2.getName());
+		System.out.println("Before calling 'start' method--");
+		System.out.println("Is "+thread1.getName()+" alive? "+thread1.isAlive());
+		System.out.println("Is "+thread2.getName()+" alive? "+thread2.isAlive());
+		System.out.println("After calling 'start' method--");
+		thread1.start();
+		System.out.println("Is "+thread1.getName()+" alive? "+thread1.isAlive());
+		thread2.start();
+		System.out.println("Is "+thread2.getName()+" alive? "+thread2.isAlive());
+	}
+}
