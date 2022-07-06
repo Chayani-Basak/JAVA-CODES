@@ -1,0 +1,45 @@
+/* Create a class called student which contains two instance variables- name and s_id. The other parameter is the college name which is static. Create a static method 
+show() which will contain the college name. Create another method display() which will display the instance variables. Show what happens if we call instance variables 
+in a static method. Call both the methods from main(). */ 
+
+import java.util.*;
+class Student_StaticMethod
+{
+      int s_id;
+      String name;
+      static String college="STCET";
+      Student_StaticMethod(int id, String n){  
+	   s_id=id;  
+	   name=n; 
+      }
+      static void show (){
+           System.out.println("College- "+college);
+     }  
+     void display (){
+           System.out.println("Student Id: "+s_id+"  Name- "+name);
+     }
+}
+class StaticMethod
+{
+     public static void main (String[] args)
+     {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("Student 1:-");
+            System.out.println("Enter student id: ");
+            int id1=sc.nextInt();
+            sc.nextLine();
+            System.out.println("Enter the name- ");
+            String n1=sc.nextLine();
+             System.out.println("Student 2:-");
+            System.out.println("Enter student id: ");
+            int id2=sc.nextInt();
+            sc.nextLine();
+            System.out.println("Enter the name- ");
+            String n2=sc.nextLine();
+            Student_StaticMethod s1=new Student_StaticMethod(id1, n1);
+            Student_StaticMethod s2=new Student_StaticMethod(id2, n2);
+            s2.show();
+            s1.display();
+            s2.display();
+      }
+}
