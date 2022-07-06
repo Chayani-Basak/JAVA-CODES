@@ -1,0 +1,139 @@
+/* Write a program in Java to demonstrate the following concepts. Also show that the class which has not been inherited to the child class those data members or methods
+is in-accessible to the child class.
+a.	Single inheritance
+b.	Multi-level inheritance 
+c.	Hierarchical inheritance  */
+
+
+
+//a)	
+import java.util.*;
+class Box
+{
+    double length;
+    double breadth;
+    double height;
+    Box(double l, double b, double h)
+    {
+          length=l;
+          breadth=b;
+          height=h;
+    }     
+    double volume()
+    {
+          return (length*breadth*height);
+      }
+}
+class WeightOfBox extends Box
+{
+    double weight;
+     WeightOfBox(double l, double b, double h, double w)
+    {
+          super(l, b, h);
+          weight=w;
+    }
+}
+class Single_Inheritance
+{
+    public static void main(String[] args)
+    {
+          Scanner sc=new Scanner(System.in);
+          System.out.print("Enter the length, breadth, height and weight of the box respectively:");
+          double l1=sc.nextDouble();
+          double b1=sc.nextDouble();
+          double h1=sc.nextDouble();
+          double w1=sc.nextDouble();
+          WeightOfBox box1=new WeightOfBox(l1, b1, h1, w1);
+          double vol=box1.volume();
+          System.out.println("Volume of the box= "+vol+" cube-units");
+          System.out.println("Weight of the box is "+box1.weight+" units");
+     }
+}
+
+//b)
+class Engineering
+{
+    void engineering()
+    {
+          System.out.println("Class- Engineering; Parent of Class- Computer Science Engineering");
+     }
+}
+class ComputerScience extends Engineering
+{
+    void computer_science()
+    {
+          System.out.println("Class- Computer Science Engineering; Parent of Class- Computer Science Subjects");
+     }
+}
+class ComputerScience_Subjects extends ComputerScience
+{
+     void subjects()
+     {
+          System.out.println("Class- Computer Science Subjects: Data Structure & Algorithms, Compiler Design, Operating System, Discrete Mathematics, ");
+          System.out.println("Formal Language & Automata Theory, Database Mangaement System, Computer Network, Computer Organization & Architecture, ");
+          System.out.println("Object Oriented Programming, Analog & Digital Electronics");
+     }
+}
+class Multilevel_Inheritance
+{
+    public static void main(String[] args)
+    {
+           ComputerScience_Subjects cse=new ComputerScience_Subjects();
+           cse.subjects();
+           cse.computer_science();
+           cse.engineering();
+     }
+}
+//c)	
+class Detectives
+{
+    void detectives()
+    {
+          System.out.println("Class- Detectives; Parent of Class- Sherlock Holmes, Byomkesh Bakshi, Hercule Poirot & Prodosh Mitra");
+     }
+}
+class SherlockHolmes extends Detectives
+{
+    void holmes()
+    {
+          System.out.println("Class- Sherlock Holmes; Assistant- Watson, Author- Arthur Conan Doyle");
+    }
+}
+class ByomkeshBakshi extends Detectives
+{
+    void bakshi()
+    {
+          System.out.println("Class- Byomkesh Bakshi; Assistant- Ajit, Author- Sharadindu Bondopadhyay");
+    }
+}
+class HerculePoirot extends Detectives
+{
+    void poirot()
+    {
+          System.out.println("Class- Hercule Poirot; Author- Agatha Christie");
+    }
+}
+class Feluda extends Detectives
+{
+    void feluda()
+    {
+          System.out.println("Class- Prodosh Mitra_Feluda; Assistant- Topshe & Jatayu, Author- Satyajit Ray");
+    }
+}
+class Hierarchial_Inheritance
+{
+    public static void main(String[] args)
+    {
+           SherlockHolmes h=new SherlockHolmes();
+           h.detectives();
+           h.holmes();
+           ByomkeshBakshi b=new ByomkeshBakshi();
+           b.bakshi();
+           HerculePoirot p=new HerculePoirot();
+           p.poirot();
+           Feluda f=new Feluda();
+           f.feluda();
+     }
+}
+
+
