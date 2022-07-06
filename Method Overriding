@@ -1,0 +1,41 @@
+/* Write a program to show method overriding for two different classes, one is company and others are Amazon and Flipkart. Both of them contain the method address which 
+is defined in the company. Address method of both companies should have its own address as well as the name of its CEO. Override the method and invoke it through the main
+class. */
+
+
+class Company
+{
+    void address()
+    {
+          System.out.println("Company's address:");
+    }
+}
+class Amazon extends Company
+{
+    @Override
+    void address()
+    {
+          System.out.println("Address of Amazon- 440, Terry Avenue North Seattle, WA 98109 USA");
+          System.out.println("CEO of Amazon- Andy Jassy");
+    }
+}
+class Flipkart extends Company
+{
+     @Override
+     void address()
+     {
+          System.out.println("Address of Flipkart- Flipkart Internet Private Limited, Ozone Manay Tech Park, #56/18 & 55/09, 7th Floor, ");
+          System.out.println("Garvebhavipalya, Hosur Road, Bangalore- 560068, Karnataka, India");
+          System.out.println("CEO of Flipkart- Kalyan Krishnamurthy");   
+     }
+}
+class Method_Overriding
+{
+    public static void main(String[] args)
+    {
+           Amazon a=new Amazon();
+           a.address();
+           Flipkart f=new Flipkart();
+           f.address();   
+     }
+}
