@@ -1,0 +1,16 @@
+class Parent {
+	static void method() {
+		System.out.println("Parent class:- Detectives");
+	}
+}
+class Child extends Parent {
+	static void method() {
+		System.out.println("Child class:- Names of detectives");
+		System.out.println("Sherlock Holmes, Byomkesh Bakshi, Miss Marple, Prodosh Mitra");
+		System.out.println("Static method in Child class hides static method in Parent class.");
+	}
+	public static void main(String[] args) 
+	{
+		method();
+	}
+}
