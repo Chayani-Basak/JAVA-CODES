@@ -1,0 +1,35 @@
+/* Create a parameterized constructor of class Employee having EID, Ename, Dept (Sales, IT, Accounts, HR). Display the record of 5 employees having all the 
+mentioned characteristics. */
+
+class Employee
+{
+   int EID;
+   String Ename;
+   String Dept;
+   Employee(int id, String name, String department)     
+   {
+        EID=id;
+        Ename=name;
+        Dept=department;
+   }
+   void display()
+   {
+         System.out.println("Employee ID: "+EID+", Employee's name: "+Ename+", Department of employee: "+Dept);
+    }
+}
+class Employee1
+{
+    public static void main (String[] args)
+    {
+        Employee e1=new Employee(124, "Amelia", "IT");
+        Employee e2=new Employee(369, "Michael", "HR");
+        Employee e3=new Employee(578, "Dora", "IT");
+        Employee e4=new Employee(402, "Paul", "Sales");
+        Employee e5=new Employee(601, "Josephine", "Accounts");
+        e1.display();
+        e2.display();
+        e3.display();
+        e4.display();
+        e5.display();
+     }
+}
