@@ -1,0 +1,35 @@
+class Student_UseStatic
+{
+      int roll;
+      String name, year;
+      static String department="CSE";
+      Student_UseStatic(int r, String n, String y){  
+	          roll=r;  
+	          name=n; 
+            year=y; 
+      }
+      void display (){
+           System.out.println("Roll: "+roll+", Name- "+name+", Year: "+year+", Department- "+department);
+      }  
+}
+class StaticVariable
+{
+     public static void main (String[] args)
+     {
+            Student_UseStatic s1=new Student_UseStatic(1, "Anne", "3rd");
+            Student_UseStatic s2=new Student_UseStatic(2, "Julian", "1st");
+            Student_UseStatic s3=new Student_UseStatic(3, "Barabara", "2nd");
+            Student_UseStatic s4=new Student_UseStatic(4, "Pam", "4th");
+            s1.display();
+            s2.display();
+            s3.display();
+            s4.display();
+            s1.roll=6;
+            s4.department="EE";
+            System.out.println();
+            s1.display();
+            s2.display();
+            s3.display();
+            s4.display();
+      }
+}
