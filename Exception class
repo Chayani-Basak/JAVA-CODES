@@ -1,0 +1,27 @@
+import java.util.*;
+class MyException extends Exception {
+	MyException() {
+		System.out.println();
+		System.out.println("String length cannot be greater than 10.");
+	}
+}
+class ExceptionDemo {
+	public static void main (String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a string- ");
+		String s=sc.nextLine();
+		try {
+			int  l=s.length();
+			StringLength(s, l);
+		}
+		catch (MyException e) {
+			System.out.println("Caught " + e);
+		}
+	}
+	static void StringLength (String s, int l) throws MyException {
+		if (l>10)
+			throw new MyException();		
+		System.out.println("String "+s+" is of length "+l+".");
+	}
+}
