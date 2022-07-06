@@ -1,0 +1,53 @@
+/* Create a class called vehicle with field speed, number of wheels and type (gear/automatic). Create a method called calspeed(), for mileage calculation and 
+displayinfo() for displaying the information. Display the information by invoking the method through main method(). */
+
+
+
+import java.util.Scanner;
+class Vehicle1{
+	float speed;
+	float distance;
+	float fuel;
+	int wheels;
+	String type;
+	float mileage;
+	void calspeed(){
+	      Scanner reader=new Scanner(System.in);
+        System.out.print("Enter the speed of vehicle:");
+        float s=reader.nextFloat();
+        reader.nextLine();
+        System.out.print("Enter the distance driven by the vehicle:");
+        float d=reader.nextFloat();
+        reader.nextLine();
+        System.out.print("Enter the quantity of fuel:");
+        float f=reader.nextFloat();
+        reader.nextLine();
+        System.out.print("Enter the number of wheels in the vehicle:");
+        int w=reader.nextInt();
+        reader.nextLine();
+        System.out.print("Enter the type of the vehicle (Gear/Automatic):");
+        String t=reader.nextLine();
+        speed=s;
+        distance=d;
+        fuel=f;
+        wheels=w;
+        type=t;
+		    float m=d/f;
+		    mileage=m;
+	}              
+	void displayinfo(){
+	      System.out.println("Speed of the vehicle="+speed+" units");
+	      System.out.println("Distance traversed by the vehicle="+distance+" units");
+	      System.out.println("Fuel consumption of the vehicle="+fuel+" units");
+	      System.out.println("Number of wheels in the vehicle="+wheels);
+	      System.out.println("Type of the vehicle:- "+type);
+	      System.out.println("Calculated Mileage of the vehicle="+mileage+" units");
+	}
+}
+public class vehicle{
+	public static void main(String[] args){
+	    Vehicle1 v=new Vehicle1();
+	    v.calspeed();
+	    v.displayinfo();
+	}
+}
