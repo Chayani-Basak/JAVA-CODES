@@ -1,0 +1,20 @@
+import java.util.*;
+class ExceptionHandling {
+	public static void main (String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a string- ");
+		String s=sc.nextLine();
+		System.out.print("Enter the index of character that is to be retrieved: ");
+		int i=sc.nextInt();
+		try {
+			System.out.println("Character at index "+i+"- "+s.charAt(i));
+		}
+		catch(StringIndexOutOfBoundsException e){
+      e.getMessage(); 
+			System.out.println();
+			System.out.println("Enter an index that is within the range of the provided string.");
+      System.out.println(e+" occurred!");
+    }
+	}
+}
