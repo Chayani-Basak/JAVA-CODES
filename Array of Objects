@@ -1,0 +1,32 @@
+// Implement the details of five students with the attributes- student id, student name using an array of objects.
+
+
+import java.util.*;
+class Array_students
+{
+     int ID;
+     String name;
+     Array_students(int Sid, String Sname)
+     {
+           ID=Sid;
+           name=Sname;
+     }
+     public static void main(String[] args)
+     {
+          Array_students[] details=new Array_students[5];
+          Scanner sc=new Scanner(System.in);
+          for (int i=0; i<5; i++)
+          {
+                System.out.print((i+1)+". Enter student ID"+": ");
+                int Sid=sc.nextInt();
+                sc.nextLine();
+                System.out.print("Enter  name of student: ");
+                String Sname=sc.nextLine();
+                details[i]=new Array_students(Sid,Sname);
+          }
+          for (int i=0; i<5; i++)
+          {
+                System.out.println((i+1)+": Student ID- "+details[i].ID+", Name of student- "+details[i].name);
+          }
+      }
+}
