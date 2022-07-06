@@ -1,0 +1,39 @@
+/* Create a class called Student containing student ID and Student name. Create a default constructor with a default value ID as 122 and name as “STCET student”.
+Also show the case when the programmer is not creating any constructor. */ 
+
+
+class Student
+ {
+   int ID;
+   String name;
+   Student()     
+   {
+        ID=122;
+        name="STCET student";
+   }
+}
+class Student1
+{
+    public static void main (String[] args)
+    {
+        Student s=new Student();
+        System.out.println(s.ID);
+        System.out.println(s.name);
+    } 
+}
+
+//When constructor is not created by programmer-
+class Student
+{
+   int ID;
+   String name;
+}
+class Student2
+{
+    public static void main (String[] args)
+    {
+        Student s=new Student();
+        System.out.println(s.ID);
+        System.out.println(s.name);
+    } 
+}
