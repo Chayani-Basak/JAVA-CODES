@@ -1,0 +1,32 @@
+//CHECKED EXCEPTION:-
+import java.io.*;    
+import java.util.*;
+class CheckedException {
+	public static void main(String[] args) 
+	{
+         		FileInputStream f= new FileInputStream("File.txt");
+		Scanner sc=new Scanner(f);
+            		int num1=sc.nextInt();
+            		int num2=sc.nextInt();
+           		int sum = num1 + num2;
+            		System.out.println("sum " + sum);
+		f.close();
+   	 }
+}
+
+//UNCHECKED EXCEPTION:-
+import java.util.*;
+class UncheckedException {
+	public static void main (String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the numerator: ");
+		int n=sc.nextInt();
+		sc.nextLine();
+		System.out.print("Enter the denominator: ");
+		int d=sc.nextInt();
+		sc.nextLine();
+		double q=n/d;
+		System.out.print("Quotient= "+q);
+	}
+}
