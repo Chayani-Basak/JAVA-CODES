@@ -1,0 +1,48 @@
+// Create class sum and demonstrate constructor overloading by adding two, three parameters. If someone passes no parameter, the message will display “Bucket is empty”.
+
+import java.util.*;
+class Sum
+{
+     int a, b, c;
+     Sum()
+    {  
+          System.out.println("Bucket is empty.");
+     }
+     Sum(int a1, int b1)
+     {
+           a=a1;
+           b=b1;
+           int sum1=a1+b1;
+           System.out.println("Sum of the 2 given numbers= "+sum1);
+     }
+     Sum(int a2, int b2, int c2)
+     {
+           a=a2;
+           b=b2;
+           c=c2;
+           int sum2=a2+b2+c2;
+           System.out.println("Sum of the 3 given numbers= "+sum2);
+     }
+     public static void main(String[] args)
+     {
+          Scanner sc=new Scanner(System.in);
+          System.out.print("If you do not want to pass any parameter, press 'N', otherwise press any other key: ");
+          char q=sc.next().charAt(0);   
+          if (q=='N')
+          {
+                 Sum s1=new Sum();
+          }
+          else  
+         {
+                System.out.print("Enter 2 numbers:");
+                int a1=sc.nextInt();
+                int b1=sc.nextInt();
+                Sum s2=new Sum(a1,b1);
+                System.out.print("Enter 3 numbers:");
+                int a2=sc.nextInt();
+                int b2=sc.nextInt();
+                int c2=sc.nextInt();
+                Sum s3=new Sum(a2,b2,c2);
+        }
+     }
+}
