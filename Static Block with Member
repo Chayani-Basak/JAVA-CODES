@@ -1,0 +1,27 @@
+/* Create a class ‘staticDemo’ which contains method ‘member’ that prints the value of a variable ‘a’ which is initialized in static block and print the value of the 
+argument which will be passed to member method. Create a static block which will initialize another variable ‘b’ in terms of ‘a’ (where b is 4 times of a). Show that 
+when and how static block will be called. Also check whether static block is enough to execute a program without main of your system. */ 
+
+class StaticDemo {
+	static void member (int a, int b)
+	{
+		System.out.println("Value of a= "+a);
+		System.out.println("Value of b= "+b);
+	}
+	static int a, b;
+	static {
+		a=24;
+	}
+	static {
+		b=4*a;
+	}
+	public static void main(String[] args)
+	{
+		member(a, b);
+	}
+}
+
+/* Static blocks are called as soon as the class is loaded in memory. If there are multiple static blocks in the class, they will execute in the sequence in which they 
+have been written in the program. They are executed before main method. */
+
+//Static block is enough to execute without creating main() method only for JDK versions 1.6 or previous. After these versions, it throws an error.
