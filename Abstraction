@@ -1,0 +1,65 @@
+/* Create a class employee which contains a method getinfo() that contains the information regarding name, emp_id and doj. Create an abstract method for getsal() which 
+calculates the salary of emp. Create two classes called manager and salesman. The basic pay of a manager is 65000 on which there will be 99% other allowance. Salesmen 
+will have a basic of 15000 where the other allowance is 85%. Calculate the salary and display the information and show the salary of each. */
+
+
+import java.util.*;
+abstract class employee
+{
+    int id;
+    String name, doj;
+    void getInfo(String name, int id, String dob)
+    { 
+         System.out.println();
+         System.out.println("Employee information:-");
+         System.out.println("NAME- "+name);
+         System.out.println("EMPLOYEE ID: "+id);
+         System.out.println("DATE OF JOINING: "+doj);  
+    }
+    abstract double getSal();
+}
+class manager extends employee
+{
+    double getSal()
+    {
+         double salary=65000+(0.99*65000);
+         return salary;
+    }
+}
+class salesman extends employee
+{
+    double getSal()
+    {
+         double salary=15000+(0.85*15000);
+         return salary;
+    }
+}
+class Abstract_Employee
+{
+    public static void main (String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Enter the employee details:-");
+         System.out.print("Name- ");
+         String n=sc.nextLine();
+         System.out.print("Employee ID: ");
+         int i=sc.nextInt();
+         sc.nextLine();
+         System.out.print("Date of joining: ");
+         String d=sc.nextLine();
+         System.out.print("Category (Manager/Salesman)- ");
+         String c=sc.nextLine();
+         employee e=new manager();
+         e.getInfo(n, i, d);
+         if (c.equalsIgnoreCase("Manager"))
+         {
+             employee m=new manager();
+             System.out.println("MANAGER'S SALARY- Rs. "+m.getSal());
+         }
+         else if (c.equalsIgnoreCase("Salesman"))
+         {
+             employee s=new salesman();
+             System.out.println("SALESMAN'S SALARY- Rs. "+s.getSal());
+         }
+    }
+}
