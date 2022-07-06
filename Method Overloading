@@ -1,0 +1,47 @@
+/* Create a class called shape which has members called calarea() and display(). Calculate the area for three different shapes: triangle (scalene triangle), 
+rectangle and circle. Apply method overloading to control the area parameter and display the area through main. */
+
+import java.util.*;
+import java.lang.Math;
+class Shape
+{	
+     public static void main(String[] args)
+     {
+          Scanner sc=new Scanner(System.in);
+          System.out.print ("Enter the values of the 3 sides of scalene traiangle:");
+          double a1=sc.nextDouble();
+          double b1=sc.nextDouble();
+          double c1=sc.nextDouble();
+          sc.nextLine();
+          System.out.print ("Enter the values of the length and the breadth of rectangle:");
+          double length1=sc.nextDouble();
+          double breadth1=sc.nextDouble();
+          sc.nextLine();
+          System.out.print ("Enter the value of the radius of circle:");
+          double r=sc.nextDouble();
+          double triangle=calarea(a1,b1,c1);
+          double rectangle=calarea(length1,breadth1);
+          double circle=calarea(r);
+          display(triangle,rectangle,circle);
+     }
+     static double calarea (double a,double b,double c)
+     {
+           double s=((a+b+c)/2);
+           double t=s*(s-a)*(s-b)*(s-c);
+           return (Math.sqrt(t));
+     }
+     static double calarea (double length,double breadth)
+     {
+          return (length*breadth);
+     }
+     static double calarea (double radius)
+     {
+          return ((22*(Math.pow(radius,2)))/7);
+     }
+     static void display (double triangle1,double rectangle1,double circle1)
+     {
+          System.out.println ("Area of the given scalene triangle= "+triangle1+" square units" );
+          System.out.println ("Area of the given rectangle= "+rectangle1+" square units" );
+          System.out.println ("Area of the given circle= "+circle1+" square units" );
+     }
+}
